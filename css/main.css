@@ -1,11 +1,12 @@
 body {
   padding: 30px;
-  background-image: url("/images/cover.jpg") !important;
-  background-size: cover;
+  background-color: #ff3c53 !important;
+  /* background-image: url("/images/cover.jpg") !important; */
+  /* background-size: cover; */
 }
 
 .floater {
-  background: #fff;
+  background: #f5213a;
   border-radius: 10px;
   font-size: 20px;
   line-height: 1.5;
@@ -13,25 +14,41 @@ body {
   /*cap the maxium width */
   margin: 0 auto;
   position: relative;
+  transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.4) all;
+  opacity: 0.7;
 }
 
 .floater input[type="text"] {
+  color: #ffffff;
+  background: none;
   padding: 50px 10px;
   border: none;
   box-shadow: none;
   font-size: 14px;
+  transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.4) all;
 }
 
 .floater-bottom {
   text-align: right;
   padding: 5px 10px 10px;
-  border-top: 1px solid rgb(221, 221, 221);
+  border-top: 1px solid rgb(199, 12, 12);
 }
 
 
 .floater-bottom button {
-  padding: 4px 7px;
-  font-size: 10px;
+  padding: 10px 15px;
+  font-size: 14px;
+  background: white;
+  border-radius: 10px;
+  border: none;
+  color: #f5213a;
+}
+
+.floater-bottom button:hover {
+
+  background-color: #960717;
+
+  color: #fff;
 }
 
 .overlay {
@@ -42,7 +59,31 @@ body {
   height: 100%;
   background: rgba(0, 0, 0, 0.7);
   opacity: 0;
+  transition: 0.4s ease opacity;
 }
 
-/* add a class to the body to target the floater and overlay */
-body.show-floater .floater {}
+/* add classes to the body to target the floater and overlay */
+body.show-floater .floater {
+  border-radius: 20px;
+  box-shadow: 0 9px 20px 5px rgba(0, 0, 0, 0.2);
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+body.show-floater .floater input[type=text] {
+  color: white;
+  padding: 60px 30px;
+  font-size: 20px;
+}
+
+body.show-floater .overlay {
+  opacity: 0.4;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
+
+/* add classes to the body to target the floater and overlay */
