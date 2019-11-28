@@ -1,54 +1,55 @@
 body {
   padding: 30px;
-  background-color: #ff3c53 !important;
+  background-color: #040111 !important;
   /* background-image: url("/images/cover.jpg") !important; */
   /* background-size: cover; */
 }
-
-.floater {
-  background: #f5213a;
-  border-radius: 10px;
+.content {
   font-size: 20px;
   line-height: 1.5;
-  max-width: 500px;
+  max-width: 600px;
   /*cap the maxium width */
   margin: 0 auto;
   position: relative;
+  z-index: 11;
+}
+.floater {
+  background: #fffefe;
+  border-radius: 10px;
   transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.4) all;
-  opacity: 0.7;
+  opacity: 0.9;
+  margin-bottom: 40px;
 }
 
 .floater input[type="text"] {
-  color: #ffffff;
+  color: #0c0707;
   background: none;
   padding: 50px 10px;
   border: none;
   box-shadow: none;
-  font-size: 14px;
+  font-size: 24px;
   transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.4) all;
 }
 
 .floater-bottom {
   text-align: right;
   padding: 5px 10px 10px;
-  border-top: 1px solid rgb(199, 12, 12);
+  border-top: 1px solid #0b032c;
 }
-
 
 .floater-bottom button {
   padding: 10px 15px;
-  font-size: 14px;
-  background: white;
+  font-size: 18px;
+  background: #0b032c;
   border-radius: 10px;
   border: none;
-  color: #f5213a;
+  color: #fcfafb;
 }
 
 .floater-bottom button:hover {
+  background-color: #fffefe;
 
-  background-color: #960717;
-
-  color: #fff;
+  color: #0b032c;
 }
 
 .overlay {
@@ -60,6 +61,8 @@ body {
   background: rgba(0, 0, 0, 0.7);
   opacity: 0;
   transition: 0.4s ease opacity;
+  z-index: 10;
+  pointer-events: none;
 }
 
 /* add classes to the body to target the floater and overlay */
@@ -70,14 +73,16 @@ body.show-floater .floater {
   transform: scale(1.2);
 }
 
-body.show-floater .floater input[type=text] {
-  color: white;
-  padding: 60px 30px;
+body.show-floater .floater input[type="text"] {
+  color: rgb(14, 12, 27);
+  /* padding: 60px 30px; */
   font-size: 20px;
+  outline: none;
 }
 
 body.show-floater .overlay {
-  opacity: 0.4;
+  opacity: 0.7;
+  pointer-events: allh;
 }
 
 .footer {
@@ -87,3 +92,25 @@ body.show-floater .overlay {
 }
 
 /* add classes to the body to target the floater and overlay */
+
+/* ------------------------------ */
+.bookmarks-list {
+  z-index: 9;
+  position: relative;
+}
+.bookmark {
+  display: block;
+  background: rgb(1, 38, 80);
+  color: #999;
+  padding: 20px;
+  border-radius: 10px;
+  transition: 0.3s ease all;
+  text-decoration: none;
+  margin-bottom: 30px;
+  box-shadow: 0 9px 20px 5px rgba(0, 0, 0, 0.2);
+}
+
+.bookmark:hover {
+  color: #040111;
+  text-decoration: none;
+}
